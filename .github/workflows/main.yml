@@ -10,10 +10,8 @@ jobs:
   build:
     strategy:
       matrix:
-        arduino-platform: ["arduino:avr", "esp8266:esp8266"]
+        arduino-platform: ["esp8266:esp8266"]
         include:
-          - arduino-platform: "arduino:avr"
-            fqbn: "arduino:avr:uno"
           - arduino-platform: "esp8266:esp8266"
             fqbn: "esp8266:esp8266:nodemcuv2"
 
