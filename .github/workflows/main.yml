@@ -40,9 +40,12 @@ jobs:
       - name: Install platform
         run: arduino-cli core install ${{ matrix.arduino-platform }}
 
-      - name: Install dependencies
+      - name: Install OpenTherm Library from GitHub
         run: |
-          arduino-cli lib install OpenTherm
+          git clone https://github.com/ihormelnyk/opentherm_library.git
+          arduino-cli lib install ./opentherm_library
+
+      - name: Install PubSubClient Library
           arduino-cli lib install PubSubClient
     
       - name: Compile Sketch
