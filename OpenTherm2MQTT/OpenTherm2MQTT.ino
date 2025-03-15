@@ -1,6 +1,6 @@
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
-#include <opentherm.h>
+#include <OpenTherm.h>
 
 #include "config.h"
 #include "logger.h"
