@@ -42,9 +42,9 @@ jobs:
 
       - name: Install OpenTherm Library from GitHub
         run: |
-          git clone https://github.com/ihormelnyk/opentherm_library.git
-          mv opentherm_library ~/.arduino15/libraries/
-          arduino-cli lib install ./opentherm_library
+          arduino-cli config init
+          arduino-cli config set library.enable_unsafe_install true
+          arduino-cli lib install --git-url https://github.com/ihormelnyk/opentherm_library.git
 
       - name: Install PubSubClient Library
         run: |
