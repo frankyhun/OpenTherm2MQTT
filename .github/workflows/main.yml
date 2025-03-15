@@ -46,6 +46,7 @@ jobs:
           arduino-cli lib install ./opentherm_library
 
       - name: Install PubSubClient Library
+        run: |
           arduino-cli lib install PubSubClient
     
       - name: Compile Sketch
