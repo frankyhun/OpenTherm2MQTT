@@ -4,7 +4,7 @@
 #define CONFIG_H
 
 // WiFi Credentials
-const char* ssid = "TODO"
+const char* ssid = "TODO";
 const char* password = "TODO";
 
 // MQTT Server
