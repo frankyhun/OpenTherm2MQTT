@@ -26,9 +26,14 @@ jobs:
       - name: Setup Arduino CLI
         uses: arduino/setup-arduino-cli@v1.1.1
       
+      - name: Create Arduino CLI config file
+        run: |
+          mkdir -p ~/.arduino15
+          echo 'board_manager:' > ~/.arduino15/arduino-cli.yaml
+          echo '  additional_urls: []' >> ~/.arduino15/arduino-cli.yaml
+
       - name: Add ESP8266 Board Manager URL
         run: |
-          arduino-cli core update-index
           arduino-cli config set board_manager.additional_urls https://arduino.esp8266.com/stable/package_esp8266com_index.json
           arduino-cli core update-index
 
