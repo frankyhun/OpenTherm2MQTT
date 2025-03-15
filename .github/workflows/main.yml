@@ -60,6 +60,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+          arduino-cli config set library.enable_unsafe_install true
           arduino-cli lib install --git-url https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WiFi
           arduino-cli lib install --git-url https://github.com/ihormelnyk/opentherm_library
           arduino-cli lib install --git-url https://github.com/knolleary/pubsubclient
