@@ -21,7 +21,7 @@ void reconnectMQTT() {
 
 void mqttCallback(char* topic, byte* payload, unsigned int length) {
   String message;
-  for (int i = 0; i < length; i++) {
+  for (unsigned i = 0; i < length; i++) {
     message += (char)payload[i];
   }
   message.trim();
