@@ -12,6 +12,11 @@ WiFiClient espClient;
 PubSubClient client(espClient);
 
 unsigned long lastRssiPublish = 0;
+unsigned long loop_begin_time = 0;
+bool heatingOn = false;
+bool hotWaterOn = false;
+bool enableCooling = false;
+float heatingSetpoint = 0.0;
 
 void setup() {
   Serial.begin(115200);
