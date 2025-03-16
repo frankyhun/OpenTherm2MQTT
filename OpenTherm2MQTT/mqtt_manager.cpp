@@ -29,3 +29,16 @@ void mqttCallback(char* topic, byte* payload, unsigned int length) {
   String topicStr = String(topic);
   Serial.println("MQTT message received: " + message + " ; topic: " + topicStr);
 }
+
+// Function to publish WiFi RSSI separately
+void publishWiFiRSSI() {
+  long rssi = WiFi.RSSI();
+  Serial.println("wifi rssi: " + String(rssi));
+
+  char payload[128];  // Reduce buffer size to save memory
+  snprintf(payload, sizeof(payload), "{\"rssi\":%ld, \"ip\":\"%s\"}",
+           rssi,
+           WiFi.localIP().toString().c_str());
+
+  client.publish(wifiRssiTopic, payload, false);
+}
