@@ -4,30 +4,30 @@
 #define CONFIG_H
 
 // WiFi Credentials
-const char* ssid = "TODO";
-const char* password = "TODO";
+extern const char* ssid;
+extern const char* password;
 
 // MQTT Server
-const char* mqtt_server = "TODO";
-const int mqtt_port = 1883;
-const char* mqtt_user = "TODO";
-const char* mqtt_password = "TODO";
+extern const char* mqtt_server;
+extern const int mqtt_port;
+extern const char* mqtt_user;
+extern const char* mqtt_password;
 
 // MQTT Topics
-const char* statusTopic = "boiler/status";
-const char* logTargetTopic = "boiler/target";
-const char* wifiRssiTopic = "boiler/wifi";
-const char* logInfoTopic = "boiler/log/info";
-const char* logErrorTopic = "boiler/log/error";
-const char* heatingControlTopic = "boiler/control/heating";
-const char* hotWaterControlTopic = "boiler/control/hotwater";
-const char* heatingSetpointTopic = "boiler/control/heating_setpoint";
+extern const char* statusTopic;
+extern const char* logTargetTopic;
+extern const char* wifiRssiTopic;
+extern const char* logInfoTopic;
+extern const char* logErrorTopic;
+extern const char* heatingControlTopic;
+extern const char* hotWaterControlTopic;
+extern const char* heatingSetpointTopic;
 
 // OpenTherm Pins
-const int inPin = 4;
-const int outPin = 5;
+extern const int inPin;
+extern const int outPin;
 
 // Timer Intervals
-const unsigned long rssiPublishInterval = 5 * 60 * 1000; // 5 minute
+extern const unsigned long rssiPublishInterval;
 
 #endif
